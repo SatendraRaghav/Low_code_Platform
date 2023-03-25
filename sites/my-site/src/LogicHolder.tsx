@@ -39,12 +39,9 @@ export const objFunc = {
     if (eventName === "Load_External_Data") {
       console.log(state.formData)
       dispatch({type:actions.notifyChange,payload:{...state.notify,success:!(state.notify.success)}})
-      // window.alert("Load")
-      //   Load_External_Data(state,dispatch,actions)
+ 
     }
     if (eventName === "Download_File") {
       dispatch({type:actions.notifyChange,payload:{...state.notify,fail:!(state.notify.fail)}})
-      // window.alert("Load")
-    //  View_File()
   }
 }};

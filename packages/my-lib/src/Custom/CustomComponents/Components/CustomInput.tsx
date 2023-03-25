@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Card, TextField } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import { DataContext,actions } from '../../../Context';
@@ -7,8 +7,9 @@ import { checkDisableCondition,checkHiddenCondition,checkInputFieldValidation } 
 
 const CustomInput = ({ data, value, updateValue,path }: any) => {
      const {  state } = useContext(DataContext);
+     const [demoValue,setDemoValue] = useState("")
      const pagePath = window.location.pathname.replaceAll("/", "_");
-     const validate  = checkInputFieldValidation(value,data);
+     const validate  = checkInputFieldValidation(demoValue,data);
      const hidden =
        checkHiddenCondition(pagePath,path,state.accessPermissions);
      return (
@@ -24,8 +25,12 @@ const CustomInput = ({ data, value, updateValue,path }: any) => {
                <TextField
                     required={data.content.required}
                     fullWidth
-                    onChange={(e) => updateValue(e.target.value)}
-                    value={value}
+                    // onChange={(e) => updateValue(e.target.value)}
+                    // value={value}
+                    value = {demoValue}
+                    onChange={(e)=>setDemoValue(e.target.value)}
+                    onBlur= {(e)=>updateValue(demoValue)}
+                    onPointerLeave={(e)=>updateValue(demoValue)}
                     disabled={checkDisableCondition(pagePath,path,state.accessPermissions)}
                   
                     label={data.content.label}

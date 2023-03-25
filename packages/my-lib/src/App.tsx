@@ -60,10 +60,9 @@ function First({ objFunc, UiSchemaJson, SchemaJson }: any) {
   }, [state.changeUrl]);
 
   const changeHandler = (data: any, errors: any) => {
-   
     setFormdata(data);
     dispatch({ type: actions.resetFormData, payload: data });
-    console.log(state.formData)
+    // console.log(state.formData)
   };
   useEffect(()=>{
     setFormdata(state.formData)

@@ -7842,7 +7842,7 @@ json@^11.0.0:
   resolved "https://registry.npmjs.org/json/-/json-11.0.0.tgz"
   integrity sha512-N/ITv3Yw9Za8cGxuQqSqrq6RHnlaHWZkAFavcfpH/R52522c26EbihMxnY7A1chxfXJ4d+cEFIsyTgfi9GihrA==
 
-"json2ui@file:C:\\Users\\Satendra_Raghav\\Projects\\PastCompnayProject\\my-app\\packages\\my-lib":
+"json2ui@file:E:\\Raghav\\json_2_UI\\Low_code_Platform\\packages\\my-lib":
   version "0.0.1"
   resolved "file:packages/my-lib"
   dependencies:
@@ -8344,7 +8344,7 @@ my-lib@*:
     react "^16.8.0 || 17.x"
     react-dom "^16.8.0 || 17.x"
 
-"my-site@file:C:\\Users\\Satendra_Raghav\\Projects\\PastCompnayProject\\my-app\\sites\\my-site":
+"my-site@file:E:\\Raghav\\json_2_UI\\Low_code_Platform\\sites\\my-site":
   version "0.0.0"
   resolved "file:sites/my-site"
   dependencies:

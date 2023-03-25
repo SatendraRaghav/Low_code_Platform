@@ -1,6 +1,8 @@
 import { HomeSchema } from "./ExternalData/Schema";
+import { pageSchema } from "./Page/Schema";
 
 
 export  const Schema = {
- Home : HomeSchema
+ Home : HomeSchema,
+ page:pageSchema
 }
