@@ -1,6 +1,7 @@
 import { HomeUiSchema } from "./ExternalData/UiSchema";
-import { pageUiSchema } from "./Page/UiSchema";
+import { page2UiSchema, pageUiSchema } from "./Page/UiSchema";
 export const UiSchema = {
     Home:HomeUiSchema,
-    page:pageUiSchema
+    page:pageUiSchema,
+    page2:page2UiSchema
 }

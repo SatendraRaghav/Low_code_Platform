@@ -7,7 +7,7 @@ import { checkDisableCondition,checkHiddenCondition,checkInputFieldValidation } 
 
 const CustomInput = ({ data, value, updateValue,path }: any) => {
      const {  state } = useContext(DataContext);
-     const [demoValue,setDemoValue] = useState("")
+     const [demoValue,setDemoValue] = useState(value)
      const pagePath = window.location.pathname.replaceAll("/", "_");
      const validate  = checkInputFieldValidation(demoValue,data);
      const hidden =

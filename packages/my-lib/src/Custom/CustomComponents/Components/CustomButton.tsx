@@ -1,8 +1,5 @@
 import React from 'react';
 import Button from "@mui/material/Button";
-import {
-  Link
-} from "react-router-dom";
 import  { useContext } from "react";
 // import { LogicHolder } from "../../../Logic/Logic";
 import { DataContext,actions } from "../../../Context";
@@ -11,7 +8,7 @@ import { checkDisableCondition,checkHiddenCondition } from "../../utils/Permissi
 
 // rome-ignore lint/suspicious/noExplicitAny: <explanation>
 export  const CustomButton = ({ data, path }: any) => {
-  const { dispatch, state,objFunc } = useContext(DataContext);
+  const { dispatch, state,objFunc ,router} = useContext(DataContext);
 
   const pagePath = window.location.pathname.replaceAll("/", "_");
   const hidden =
@@ -25,7 +22,7 @@ export  const CustomButton = ({ data, path }: any) => {
  
          {    
          data.content.page?
-          <Link to={`/${data.content.page}`} style={{ textDecoration: 'none' }} >
+          <router.Link to={`/${data.content.page}`} style={{ textDecoration: 'none' }} >
         <Button
           fullWidth
           type={data.content.type}
@@ -44,7 +41,7 @@ export  const CustomButton = ({ data, path }: any) => {
           {data.content.name}
     
         </Button>
-        </Link>:
+        </router.Link>:
           <Button
           fullWidth
           type={data.content.type}

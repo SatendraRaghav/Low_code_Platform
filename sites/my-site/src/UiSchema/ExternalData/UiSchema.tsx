@@ -264,7 +264,8 @@ export const  HomeUiSchema = {
                           color: "info",
                           type: "text",
                           eventName:"Load_External_Data",
-                          size: "large"
+                          size: "large",
+                          page:'page'
                         },
                         style: {
                           textAlign: "right",

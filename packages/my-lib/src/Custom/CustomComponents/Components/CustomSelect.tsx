@@ -7,6 +7,7 @@ import {
   Paper,
   Autocomplete,
   TextField,
+  Checkbox,
 } from "@mui/material";
 import { DataContext } from "../../../Context";
 import OutlinedInput from '@mui/material/OutlinedInput';
@@ -15,25 +16,13 @@ import {
   checkHiddenCondition,
 } from "../../utils/Permission";
 import { Theme, useTheme } from '@mui/material/styles';
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-const MenuProps = {
-  PaperProps: {
-    style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
-    },
-  },
-};
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
-function getStyles(name: string, personName: readonly string[], theme: Theme) {
-  return {
-    fontWeight:
-      personName.indexOf(name) === -1
-        ? theme.typography.fontWeightRegular
-        : theme.typography.fontWeightMedium,
-  };
-}
+const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
+const checkedIcon = <CheckBoxIcon fontSize="small" />;
+
+
 
 
 export  default function CustomSelect({ data, value, updateValue, path }: any) {
@@ -74,17 +63,29 @@ const  [apiOption, setApiOption] = React.useState<Array<any>>([]);
               <Autocomplete
               onChange={(event, newValue) => {
                 const value = newValue.map((elem) => {
-                  return elem.value;
+                  return elem;
                 });
                 updateValue(value);
                }}
               multiple
+              disableCloseOnSelect
               id="tags-standard"
               options={apiOption}
               getOptionLabel={(option) => {
                 return option.label;
               }}
-              // defaultValue={}
+              defaultValue={value}
+              renderOption={(props, option, { selected }) => (
+                <li {...props}>
+                  <Checkbox
+                    icon={icon}
+                    checkedIcon={checkedIcon}
+                    style={{ marginRight: 8 }}
+                    checked={selected}
+                  />
+                  {option.label}
+                </li>
+              )}
               renderInput={(params) => (
                 <TextField
                   {...params}

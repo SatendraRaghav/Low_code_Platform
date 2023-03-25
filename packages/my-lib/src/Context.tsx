@@ -72,13 +72,13 @@ const reducer = (state:any, action:any) => {
           return state;
   }
 };
-export const DataProvider = ({ children,objFunc }:any) => {
+export const DataProvider = ({ children,objFunc,router }:any) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const contextValue = useMemo(() => {
     return { state, dispatch};
   }, [state, dispatch]);
 return (
-    <DataContext.Provider value={{...contextValue, objFunc:objFunc}}>
+    <DataContext.Provider value={{...contextValue, objFunc:objFunc,router:router}}>
       {children}
     </DataContext.Provider>
   );

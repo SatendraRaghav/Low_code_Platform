@@ -4,5 +4,6 @@ import { pageSchema } from "./Page/Schema";
 
 export  const Schema = {
  Home : HomeSchema,
- page:pageSchema
+ page:pageSchema,
+ page2:{}
 }

@@ -38,8 +38,9 @@ export const objFunc = {
   ) => {
     if (eventName === "Load_External_Data") {
       console.log(state.formData)
-      dispatch({type:actions.notifyChange,payload:{...state.notify,success:!(state.notify.success)}})
- 
+      dispatch({type:actions.resetFormData,payload:{input:'RAghav',radio:'YES',programType:[{label:"DSL",value:1}],agencyType:'default'}})
+      // dispatch({type:actions.notifyChange,payload:{...state.notify,success:!(state.notify.success)}})
+
     }
     if (eventName === "Download_File") {
       dispatch({type:actions.notifyChange,payload:{...state.notify,fail:!(state.notify.fail)}})

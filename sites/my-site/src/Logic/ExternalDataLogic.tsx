@@ -24,6 +24,7 @@ export const programComboLoadFunction = (state: any)=>{
         console.log(error);
         return [{}];
       });
+      console.log(result)
     return result;
 }
 
